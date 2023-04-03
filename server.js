@@ -1,10 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { users } = require('./db/users.json');
+const { users } = require('./db/data.json');
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // * Middleware: added to instruct server on typeOf data & how to interpret(read and write)
@@ -54,8 +54,8 @@ function filterByQuery(query, usersArray) {
     if (query.role) { //
         filteredResults = filteredResults.filter(user => user.role === query.role);
     }
-    if (query.gender) {
-        filteredResults = filteredResults.filter(user => user.gender === query.gender)
+    if (query.nickname) {
+        filteredResults = filteredResults.filter(user => user.nickname === query.nickname)
     }
     if (query.name) {
         filteredResults = filteredResults.filter(user => user.name === query.name);
@@ -75,7 +75,7 @@ function createNewUser(body, usersArray) {
     console.log(body);
     usersArray.push(user);
     fs.writeFileSync(
-        path.join(__dirname, './db/users.json'),
+        path.join(__dirname, './db/data.json'),
         JSON.stringify({ users: usersArray }, null, 2)
     );
 
@@ -87,7 +87,7 @@ function validateUser(user) {
     if (!user.name || typeof user.name !== 'string') {
         return false;
     }
-    if (!user.gender || typeof user.gender !== 'string') {
+    if (!user.nickname || typeof user.nickname !== 'string') {
         return false;
     }
     if (!user.role || typeof user.role !== 'string') {

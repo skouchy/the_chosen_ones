@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registry - Users</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header class="py-4 mb-3">
+    <div class="flex-row justify-space-between align-center container-fluid mx-auto">
+      <h1 class="text-light bg-dark p-3">River Planner</h1>
+      <h3 class="text-light bg-dark p-3">A Crew Catalog</h3>
+    </div>
+  </header>
+
+  <main class="container-fluid mx-auto mb-3">
+    <section class="p-3 mb-3 bg-dark flex-row align-center">
+      <h2 class="text-light col-12 col-lg-5">Our Crew</h2>
+      <div class="col-12 col-lg-7 flex-row text-center justify-space-around align-center">
+        <a class="btn col-12 col-md-auto mx-2" href="/">Add To the registry</a>
+        <a class="btn col-12 col-md-auto mx-2" href="/costumes">View Costume Ideas</a>
+      </div>
+    </section>
+
+    <section class="my-2 flex-row justify-space-between">
+      <div class="col-12 col-lg-3 bg-dark p-3">
+        <h3 class="text-light">Filter Your Search.</h3>
+        <form id="users-form">
+          <label for="role-input" class="form-label">Job Role</label>
+          <div class="flex-row justify-center">
+            <div class="col-auto mb-2">
+              <input type="radio" id="chief-input" name="role" value="chief">
+              <label for="chief-input">Chief</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="sublead-input" name="role" value="sublead">
+              <label for="sublead-input">Sub Lead</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="chef-input" name="role" value="chef">
+              <label for="chef-input">Chef</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="janitorial-input" name="role" value="janitorial">
+              <label for="janitorial-input">Janitorial</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="entertainment-input" name="role" value="entertainment">
+              <label for="entertainment-input">Entertainment</label>
+            </div>
+          </div>
+          <label for="diet-input" class="form-label">Dietary Needs (pick all that apply)</label>
+          <small>On macOS, use <kbd>command + click</kbd></small> <br />
+          <small>On Windows, use <kdb>ctrl + click</kdb></small>
+          <select multiple id="diet-input" class="form-input" name="diet">
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="pescetarian">Pescetarian</option>
+            <option value="nut-free">Nut Free</option>
+            <option value="glutenFree">Gluten Free</option>
+          </select>
+
+          <button class="btn">Show Users</button>
+        </form>
+      </div>
+      <div class="col-12 col-lg-9 bg-dark p-3">
+
+        <div class="flex-row justify-space-between" id="display-area"></div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script src="./assets/js/userlog.js"></script>
+</body>
+
+</html>

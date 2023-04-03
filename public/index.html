@@ -5,41 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Registry - users</title>
+  <title>Crew Log</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-  <header class="py-4 mb-3">
+  <header class="py-3 mb-3">
     <div class="flex-row justify-space-between align-center container-fluid mx-auto">
-      <h1 class="text-light bg-dark p-3">Registry</h1>
-      <h3 class="text-light bg-dark p-3">A Registry Catalog</h3>
+      <h1 class="text-light bg-dark p-3">Crew Log</h1>
+      <h3 class="text-light bg-dark p-3">A crew user Catalog</h3>
+    </div>
+    <div class="container-fluid mx-auto">
+      <section class="p-3 my-4 bg-dark ">
+        <h2 class="text-light">Your planning guide.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere fugiat sint ab ut blanditiis assumenda, culpa
+          alias perspiciatis, at quasi minus. Repellendus magni accusamus aliquam sunt culpa ex enim natus.</p>
+      </section>
     </div>
   </header>
 
-  <main class="container-fluid mx-auto mb-3">
+  <main class="container-fluid mx-auto">
+
     <section class="p-3 mb-3 bg-dark flex-row align-center">
-      <h2 class="text-light col-12 col-lg-5">Our Crew</h2>
+      <h2 class="text-light col-12 col-lg-5">Add To Our Catalog.</h2>
       <div class="col-12 col-lg-7 flex-row text-center justify-space-around align-center">
-        <a class="btn col-12 col-md-auto mx-2" href="/">Add To the registry</a>
-        <a class="btn col-12 col-md-auto mx-2" href="/userlog">View User Log</a>
+        <a class="btn col-12 col-md-auto mx-2" href="userlog.html">View Crew</a>
+        <a class="btn col-12 col-md-auto mx-2" href="/costumes">View Costume Ideas</a>
       </div>
     </section>
 
-    <section class="my-2 flex-row justify-space-between">
-      <div class="col-12 col-lg-3 bg-dark p-3">
-        <h3 class="text-light">Filter Your Search.</h3>
-        <form id="users-form">
+    <section class="my-4 flex-row justify-space-between ">
+      <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
+        <h3 class="text-light">Enter a user</h3>
+        <form id="user-form">
+          <label for="user-name" class="form-label">User Name</label>
+          <input type="text" id="user-name" name="name" class="form-input" placeholder="Enter Name">
+
+          <label for="nickname-input" class="form-label">Nickname</label>
+          <input type="text" id="nickname-input" name="nickname" class="form-input" placeholder="Enter Nickname">
+
           <label for="role-input" class="form-label">Job Role</label>
           <div class="flex-row justify-center">
             <div class="col-auto mb-2">
-              <input type="radio" id="chief-input" name="role" value="chief">
+              <input type="radio" id="chief-input" name="role" value="chief" checked>
               <label for="chief-input">Chief</label>
             </div>
             <div class="col-auto mb-2">
-              <input type="radio" id="subLead-input" name="role" value="subLead">
-              <label for="subLead-input">Sub Lead</label>
+              <input type="radio" id="sublead-input" name="role" value="sublead">
+              <label for="sublead-input">Sub Lead</label>
             </div>
             <div class="col-auto mb-2">
               <input type="radio" id="chef-input" name="role" value="chef">
@@ -54,7 +68,8 @@
               <label for="entertainment-input">Entertainment</label>
             </div>
           </div>
-          <label for="diet-input" class="form-label">Diet Traits (pick all that apply)</label>
+
+          <label for="diet-input" class="form-label">Dietary Needs (pick all that apply)</label>
           <small>On macOS, use <kbd>command + click</kbd></small> <br />
           <small>On Windows, use <kdb>ctrl + click</kdb></small>
           <select multiple id="diet-input" class="form-input" name="diet">
@@ -62,15 +77,29 @@
             <option value="vegan">Vegan</option>
             <option value="pescetarian">Pescetarian</option>
             <option value="nut-free">Nut Free</option>
-            <option value="glutenFree">Gluten Free</option>
+            <option value="gluten-free">Gluten Free</option>
           </select>
 
-          <button class="btn">Get users</button>
+          <button class="btn">Add User</button>
         </form>
       </div>
-      <div class="col-12 col-lg-9 bg-dark p-3">
 
-        <div class="flex-row justify-space-between" id="display-area"></div>
+      <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
+        <h3 class="text-light">Generate Costume Idea</h3>
+        <form id="costume-form">
+          <label for="costume-name" class="form-label">Costume Name</label>
+          <input type="text" id="costume-name" class="form-input input" placeholder="Enter Name"
+            name="costume-name">
+
+          <label for="noun-input" class="form-label input">Noun</label>
+          <input type="number" id="noun-input" class="form-input" placeholder="Enter Noun" name="noun">
+
+          <label for="adjective" class="form-label">Adjective</label>
+          <input type="text" class="form-input input" id="adjective" placeholder="Enter Adjective"
+            name="adjective">
+
+          <button class="btn">Add Costume</button>
+        </form>
       </div>
     </section>
 

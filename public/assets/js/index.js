@@ -5,7 +5,7 @@ const handleUserFormSubmit = event => {
 
   // get user data and organize it
   const name = $userForm.querySelector('[name="name"]').value;
-  const gender = $userForm.querySelector('[name="gender"]').value;
+  const nickname = $userForm.querySelector('[name="nickname"]').value;
   const roleRadioHTML = $userForm.querySelectorAll('[name="role"]');
   let role;
 
@@ -19,12 +19,12 @@ const handleUserFormSubmit = event => {
     role = '';
   }
 
-  const selectedDietNeed = $userForm.querySelector('[name="personality"]').selectedOptions;
+  const selectedDietNeed = $userForm.querySelector('[name="diet"]').selectedOptions;
   const dietaryNeedsArray = [];
   for (let i = 0; i < selectedDietNeed.length; i += 1) {
     dietaryNeedsArray.push(selectedDietNeed[i].value);
   }
-  const userObject = { name, gender, role, dietaryNeedsArray };
+  const userObject = { name, nickname, role, dietaryNeedsArray };
 
   fetch('/api/users', {
     // allows request to reach proper endpoint in our server (when we added new users to JSON file)

@@ -1,11 +1,11 @@
 :root {
-    --primary: #123859;
-    --secondary: #419fd9;
-    --tertiary: #03738c;
-    --quaternary: #8c7503;
-    --quinary: #594b02;
+    --primary: #105025;
+    --secondary: rgb(239, 209, 92);
+    --tertiary: #0998b8;
+    --quaternary: #63730a;
+    --quinary: #473b01;
     --light: #ffffff;
-    --dark: #272f32;
+    --dark: #283227;
     --border-radius: 0.3rem;
     --spacing-one: calc(1rem * 0.25);
     --spacing-two: calc(1rem * 0.5);
@@ -120,7 +120,7 @@
   
   .btn:hover {
     color: var(--light);
-    background-color: var(--tertiary);
+    background-color: var(--quinary);
   }
   
   .btn-inline {
