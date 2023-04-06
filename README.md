@@ -7,7 +7,7 @@ SO THAT myself and all other's that I want to invite on the trip can input logis
 
 ## Acceptance Criteria
 GIVEN a river trip planning application
-When I visit the site for the first time
+WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes a returning user login, or 2 options for a new user: "planning a trip" or "joining a trip"
 WHEN I am a new Trip Leader,
 THEN I choose "Planning a Trip" by clicking "Register Trip" Button
@@ -35,19 +35,3 @@ WHEN I click on the log out option in the navigation
 THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN my browser returns to the home page
-
-•	A code will be generated, and I can share that code to my peeps.
-•	If I choose “Join Trip”, then a form will be presented asking the code.
-•	After the code is verified, a form will be presented asking:
-1.	Name
-2.	Phone #
-3.	Email
-4.	Can you row a boat? (Y/N)
-5.	Which are you bringing? (Choice: Life jacket, First Aid, Sunscreen, Cooler, Speaker, Towel, Ice Cream, Drinks)
-6.	Dietary needs (choice: vegan, Gluten free, nuts etc.)
-•	Then different users can join the hub of information filtered based on input.
-Reach Goals:
-•	Users can see each other’s information and fill in what to bring.
-•	Users can view the guestlist and dietary needs via filter.
-•	One new library/package that we haven’t discussed:
-https://github.com/juliangarnier/anime/
