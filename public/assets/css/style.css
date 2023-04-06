@@ -26,7 +26,25 @@
     color: var(--secondary);
     line-height: 1.5;
     font-size: 16px;
+    background: url(./Background.jpg);
+    justify-content: center;
+    /* background-size: cover; */
   }
+  .container{
+    width: 100px;
+    max-width: 100px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0,0,0,.2);
+    border-radius:20px;
+    background-color: rgb(53, 158, 76);
+    justify-content: center;
+  }
+  
+
+.form--hidden {
+  display: none;
+}
   
   h1,
   h2,
@@ -39,6 +57,7 @@
     margin: 5px 0;
     color: var(--secondary);
     line-height: 1.25;
+    justify-content: center;
   }
   
   h1 {
