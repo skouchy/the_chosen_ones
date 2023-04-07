@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../util/auth');
 
 // GET /api/users
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     // GETs & queries ALL Users from user table
     User.findAll()
     .then(dbUserModel => res.json(dbUserModel))
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
         res.status(500).json(error);
     })
 });
-router.get('/:id', (req, res) => {
+router.get('/:id',withAuth, (req, res) => {
     User.findOne({
         where: {
             id: req.params.id
