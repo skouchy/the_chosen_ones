@@ -7,7 +7,7 @@ SO THAT myself and all other's that I want to invite on the trip can input logis
 
 ## Acceptance Criteria
 GIVEN a river trip planning application
-WHEN I visit the site for the first time
+When I visit the site for the first time
 THEN I am presented with the homepage, which includes a returning user login, or 2 options for a new user: "planning a trip" or "joining a trip"
 WHEN I am a new Trip Leader,
 THEN I choose "Planning a Trip" by clicking "Register Trip" Button
@@ -35,3 +35,7 @@ WHEN I click on the log out option in the navigation
 THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN my browser returns to the home page
+
+
+•	One new library/package that we haven’t discussed:
+https://github.com/juliangarnier/anime/

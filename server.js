@@ -26,12 +26,6 @@ app.use(express.urlencoded({ extended: true }));// parse incoming string or arra
 // * ====================== end of "Middleware" =================================== *// 
 
 
-// connects Express Handlebars engine to render home
-app.get('/', (req, res) => {
-   res.render('home'); // refers to home.handlebars
-});
-
-
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
