@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     Trip.findAll()
     .then(dbTripModel => res.json(dbTripModel))
     .catch(error => {
-        console.log(`routes/tripTrip:js10`, error);
+        console.log(`routes/trip:js10`, error);
         res.status(500).json(error);
     })
 });
@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
     })
     .then(dbTripModel => {
         if (!dbTripModel) {
-            res.status(404).json({ message: 'No tripTrip found with this id'});
+            res.status(404).json({ message: 'No Trip found with this id'});
             return;
         }
         res.json(dbTripModel);
