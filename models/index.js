@@ -1,14 +1,14 @@
 // imports User model
 const User = require('./User');
-const Project =require('./Trip');
+// const Trip =require('./Trip');
 
-User.hasMany(Trip, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
+// User.hasMany(Trip, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+// });
 
-Trip.belongsTo(User,{
-    foreignKey: 'user_id'
-});
+// Trip.belongsTo(User,{
+//     foreignKey: 'user_id'
+// });
 
 module.exports = { User };
