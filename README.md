@@ -39,3 +39,9 @@ THEN my browser returns to the home page
 
 •	One new library/package that we haven’t discussed:
 https://github.com/juliangarnier/anime/
+
+## Link to Repo
+https://github.com/skouchy/the_chosen_ones
+
+## Link to Heroku Deployment
+https://damp-forest-71162.herokuapp.com/

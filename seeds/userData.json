@@ -1,7 +1,14 @@
 [
     {
-        "username": "Chad",
+        "username": "Chad-a-base",
+        "password": "pass123",
+        "name": "Chad G",
         "email": "c@email.com",
-        "password": "pass123"
+        "diet": [
+            "vegetarian",
+            "nut-free"
+        ],
+        "boat": "kayak",
+        "captain": true
     }
 ]
