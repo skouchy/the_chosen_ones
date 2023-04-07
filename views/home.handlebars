@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Example App - Home</title>
-</head>
-<body>
-
+{{!-- 
     <!-- Uses built-in `if` helper. -->
   {{#if showTitle}}
     <h1>Home</h1>
@@ -15,7 +8,9 @@
     <p>{{foo}}</p>
 
     <!-- Calls `bar` helper, defined at instance-level. -->
-    <p>{{bar}}</p>
+    <p>{{bar}}</p> --}}
 
-</body>
-</html>
+<p>Helllo Worlds!</p>
+{{#each dbData}}
+  <p>{{name}}</p>
+{{/each}}

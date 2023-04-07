@@ -1,29 +1,30 @@
 const express = require('express');
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars'); 
 const routes = require('./routes');
 const sequelize = require('./config/connection');
-
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // * Middleware: added to instruct server on typeOf data & how to interpret(read and write)
-
-app.engine('handlebars', engine());
+const hbs = exphbs.create({}) //add helpers into  curly braces utils
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+
 
 app.use(routes);// turn on routes
 app.use(express.json());// parse incoming JSON data
 app.use(express.urlencoded({ extended: true }));// parse incoming string or array data 
+app.use(express.static(path.join(__dirname, 'public')));
 // converts incoming POST data into key/value pairs: accessed in req.body{}
 
 
 
-
-
-
 // * ====================== end of "Middleware" =================================== *// 
+
+
+
 
 
 
