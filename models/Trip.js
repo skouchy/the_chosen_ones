@@ -47,7 +47,7 @@ Trip.init(
         // commands underscores rather than hyphens (i.e. `comment_text` and not `commentText`)
         underscored: true,
         // make it so our model name stays lowercase in the database
-        modelName: 'user'
+        modelName: 'trip'
     }
     );
     
