@@ -18,7 +18,7 @@ THEN a number will render in that empty box, an alert text to copy that ID numbe
 WHEN the trip data saves
 THEN a new "Trip" table is created
 WHEN I click the 'Next' button
-THEN I am to fill out 'new user' credential Inputs:[unique User name, Password, first & last name, phone #, email], Select:[ dietary restrictions(vegetarian, vegan, pescetarian, nut-free, gluten-free), Bringing boat? (none, raft, kayak) ], and a Checkbox: "can you row a boat?" (y/n)
+THEN I am to fill out 'new user' credential Inputs:[unique User name, Password, first & last name, phone #, email], Select:[ dietary restrictions(vegetarian, vegan, pescetarian, nut-free, gluten-free)], Radio: Bringing boat? (none, raft, kayak), and a Checkbox: "can you row a boat?" (y/n)
 WHEN all my user details are input
 THEN I will paste or enter the Trip ID that I am associated to
 WHEN I click "Join the Crew" button

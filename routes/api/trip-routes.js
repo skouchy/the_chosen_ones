@@ -26,6 +26,7 @@ router.get('/:id', (req, res) => {
     })
     .catch(error => {
         console.log(`routes/Trip:js28`, error);
+        res.status(500).json(error);
     })
 });
 

@@ -27,7 +27,8 @@ router.get('/:id', (req, res) => {
     })
     .catch(error => {
         console.log(`routes/user:js28`, error);
-    })
+        res.status(500).json(error);
+    });
 });
 
 router.post('/', (req, res) => {});

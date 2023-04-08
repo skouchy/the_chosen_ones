@@ -17,21 +17,12 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     // defines 'username' column and allowed data constraints
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    // defines 'email' column and allowed data constraints
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
     // defines 'password' column and allowed data constraints
     password: {
@@ -40,6 +31,15 @@ User.init(
       validate: {
         len: [6], // password must be atleast 6 characters
       },
+    },
+    // defines 'email' column and allowed data constraints
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      }
     },
   },
   {

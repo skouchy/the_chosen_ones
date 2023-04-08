@@ -49,9 +49,9 @@ Trip.init(
         // make it so our model name stays lowercase in the database
         modelName: 'trip'
     }
-    );
-    
-    // exports user model to be used in other parts of app
-    module.exports = Trip;
-  
+);
+
+// exports user model to be used in other parts of app
+module.exports = Trip;
+
   //(https://sequelize.org/v5/manual/models-definition.html#configuration))
