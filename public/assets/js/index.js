@@ -1,3 +1,5 @@
+const { User } = require("../../../models");
+
 const $userForm = document.querySelector('#user-form');
 
 const handleUserFormSubmit = event => {
@@ -19,12 +21,16 @@ const handleUserFormSubmit = event => {
     role = '';
   }
 
+  
+  // const selectedDietNeed = User.findOne({
+  //   where: { diet }
+  // });
   const selectedDietNeed = $userForm.querySelector('[name="diet"]').selectedOptions;
-  const dietaryNeedsArray = [];
+  const dietArray = [];
   for (let i = 0; i < selectedDietNeed.length; i += 1) {
-    dietaryNeedsArray.push(selectedDietNeed[i].value);
+    dietArray.push(selectedDietNeed[i].value);
   }
-  const userObject = { name, nickname, role, dietaryNeedsArray };
+  const userObject = { username, password, name, email, dietArray, boat, captain, trip_id };
 
   fetch('/api/users', {
     // allows request to reach proper endpoint in our server (when we added new users to JSON file)

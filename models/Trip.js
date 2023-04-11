@@ -14,28 +14,27 @@ Trip.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // // defines 'username' column and allowed data constraints
-        // username: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
-        // // defines 'email' column and allowed data constraints
-        // email: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true,
-        //     validate: {
-        //         isEmail: true
-        //     }
-        // },
-        // // defines 'password' column and allowed data constraints
-        // password: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     validate: {
-        //         len: [6] // password must be atleast 6 characters
-        //     }
-        // }
+        // defines 'username' column and allowed data constraints
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        launch_date: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        end_date: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        section: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        river: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },
     {
         // calls sequelize connection direct to the database

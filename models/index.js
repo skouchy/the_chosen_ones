@@ -1,14 +1,19 @@
 // imports User model
 const User = require('./User');
-// const Trip =require('./Trip');
+const Trip = require('./Trip');
 
-// User.hasMany(Trip, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
+Trip.hasMany(User, {
+    foreignKey: 'trip_id',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE'
+});
 
-// Trip.belongsTo(User,{
-//     foreignKey: 'user_id'
-// });
+User.belongsTo(Trip, {
+    foreignKey: 'trip_id'
+});
 
-module.exports = { User };
+// EXAMPLE
+// Team.hasMany(Player);
+// Player.belongsTo(Team);
+
+module.exports = { User, Trip };

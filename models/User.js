@@ -22,15 +22,18 @@ User.init(
     // defines 'username' column and allowed data constraints
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     // defines 'password' column and allowed data constraints
     password: {
       type: DataTypes.STRING,
+      // set(value) {
+      //   this.setDataValue('password', hash(value));
+      // },
       allowNull: false,
       validate: {
         len: [6], // password must be atleast 6 characters
-      },
+      }
     },
     // defines 'email' column and allowed data constraints
     email: {
@@ -41,6 +44,24 @@ User.init(
         isEmail: true,
       }
     },
+    diet: {
+      type: DataTypes.ENUM('vegetarian', 'vegan', 'pescetarian', 'nut-free', 'gluten-free'),
+      allowNull: true
+    },
+    has_boat: {
+      type: DataTypes.ENUM,
+      values: ['none', 'raft', 'kayak'],
+      allowNull: false
+    },
+    can_row: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+    trip_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   },
   {
     hooks: {
