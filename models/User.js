@@ -1,12 +1,12 @@
 // create our User model: imported 'Model' class & 'DataTypes' obj from Sequelize
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connection.js");
 const bcrypt = require("bcrypt");
 
 class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
+  // checkPassword(loginPw) {
+  //   return bcrypt.compareSync(loginPw, this.password);
+  // }
 }
 
 // initialize User model data and configuration
@@ -87,7 +87,7 @@ User.init(
     // commands underscores rather than hyphens (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "user",
+    modelName: 'user',
   }
 );
 

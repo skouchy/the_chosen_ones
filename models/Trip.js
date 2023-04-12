@@ -1,6 +1,6 @@
 // create our User model: imported 'Model' class & 'DataTypes' obj from Sequelize
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection.js');
 
 class Trip extends Model { }
 
@@ -15,7 +15,7 @@ Trip.init(
             autoIncrement: true
         },
         // defines 'username' column and allowed data constraints
-        name: {
+        trip_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
