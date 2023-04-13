@@ -1,25 +1,23 @@
 const sequelize = require('../config/connection');
 const { User, Trip } = require('../models');
 
-const userSeedData = require('./userData.json');
-const tripSeedData = require('./tripData.json');
+const userData = require('./userData.json');
+const tripData = require('./tripData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const Trips = await Trip.bulkCreate(tripSeedData);
-  //   , {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  const trip = await Trip.bulkCreate(tripData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-
-  // for (const user of userSeedData) {
-  //   const newUser = await User.create({
-  //     ...user,
-  //     trip_id: trip_id,
-  //   });
-  // }
+  for (const user of userData) {
+    await User.create({
+      ...user,
+      trip_id: trip[Math.floor(Math.random() * trip.length)].id,
+    });
+  }
 
   process.exit(0);
 };
