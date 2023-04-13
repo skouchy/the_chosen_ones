@@ -6,7 +6,7 @@ const { User, Trip } = require('../../models');
 router.get('/', (req, res) => {
     // GETs & queries ALL Users from user table
     User.findAll({
-        attributes: [['id', 'username', 'password', 'email', 'diet', 'has_boat', 'can_row', 'trip_id']],
+        // attributes: [['id', 'username', 'password', 'email', 'diet', 'has_boat', 'can_row', 'trip_id']],
         include: [
             {
                 model: Trip,

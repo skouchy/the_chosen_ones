@@ -61,7 +61,11 @@ User.init(
     },
     trip_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'trip',
+        key: 'id'
+      }
     }
   },
   {
