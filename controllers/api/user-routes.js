@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbUserModel => res.json(dbUserModel))
+        .then(userData => res.json(userData))
         .catch(error => {
             console.log(`routes/user:js10`, error);
             res.status(500).json(error);
@@ -34,12 +34,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-        .then(dbUserModel => {
-            if (!dbUserModel) {
+        .then(userData => {
+            if (!userData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
-            res.json(dbUserModel);
+            res.json(userData);
         })
         .catch(error => {
             console.log(`routes/user:js28`, error);
@@ -53,12 +53,12 @@ router.get('/:diet', (req, res) => {
             diet: req.params.diet
         }
     })
-        .then(dbUserModel => {
-            if (!dbUserModel) {
+        .then(userData => {
+            if (!userData) {
                 res.status(404).json({ message: 'No user found with this dietary restriction' });
                 return;
             }
-            res.json(dbUserModel);
+            res.json(userData);
         })
         .catch(error => {
             console.log(`routes/user:js28`, error);
@@ -76,9 +76,9 @@ router.post('/', (req, res) => {
         can_row: req.body.can_row,
         trip_id: req.body.trip_id
     })
-        .then(dbUserModel => {
-            console.log(dbUserModel);
-            res.json(dbUserModel)
+        .then(userData => {
+            console.log(userData);
+            res.json(userData)
         })
         .catch(err => {
             console.log(err);
@@ -92,22 +92,22 @@ router.post('/login', (req, res) => {
             email: req.body.email
         }
     })
-        .then(dbUserModel => {
-            if (!dbUserModel) {
+        .then(userData => {
+            if (!userData) {
                 res.status(400).json({ message: 'No user with that email address!' });
                 return;
             }
 
             //verify user by email, here checks password & talks to Class User Model in User.js....
             // becuz dbUserData is query result of .findOne() it carries user data (including req.body.password which holds the plaintext from user input)
-            const validPassword = dbUserData.checkPassword(req.body.password); // req.body.password passed thru checkPassword
+            const validPassword = userData.checkPassword(req.body.password); // req.body.password passed thru checkPassword
             // validPassword is the result & stored as Boolean value: true or false 
             if (!validPassword) {
                 res.status(400).json({ message: 'Incorrect Password!' });
                 return;
             }
 
-            res.json({ user: dbUserData, message: 'YoU aRe NoW lOgGeD iN!' });
+            res.json({ user: userData, message: 'YoU aRe NoW lOgGeD iN!' });
 
         })
 })
