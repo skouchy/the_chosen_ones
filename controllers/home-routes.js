@@ -1,27 +1,27 @@
-const router = require ('express').Router();
+const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Trip, User } = require('../models');
 
-router.get('/', (req,res) => {
+// router.get('/', (req, res) => {
 
-    // DB call, API call
-    const dbData = [{name: 'george'}, {name: 'solo'}];
-    // const dbData2 = { Model: User };
+//     // DB call, API call
+//     const dbData = [{ name: 'george' }, { name: 'solo' }];
+//     // const dbData2 = { Model: User };
 
-    res.render('home', 
-    {
-        dbData,
-        // dbData2,
-        layout: 'main'
-    });
-});
+//     res.render('home',
+//         {
+//             dbData,
+//             // dbData2,
+//             layout: 'main'
+//         });
+// });
 
-router.get('/login', (req,res) => {
+router.get('/login', (req, res) => {
     res.render('login')
 });
 
-router.get('/home', (req,res) => {
-    User.findAll({
+router.get('/home', async (req, res) => {
+    const userData = await User.findAll({
         attributes: [
             'id',
             'username',
@@ -30,35 +30,50 @@ router.get('/home', (req,res) => {
             'can_row',
             'trip_id'
         ]
-    })
-    .then(userData => {
-        console.log(userData);
-        res.render('home', userData)
-
-    })
-})
-router.post('/home', (req,res) => {
-    User.findAll({
+    });
+    const tripData = await Trip.findAll({
         attributes: [
             'id',
-            'username',
-            'diet',
-            'has_boat',
-            'can_row',
-            'trip_id'
+            'trip_name',
+            'launch_date',
+            'end_date',
+            'section',
+            'river'
         ]
-    })
-    .then(userData => {
-        console.log(userData);
-        res.render('home', userData)
+    });
+    // console.log(userData);
+    //({plain: true}) befause sequelize returns more than data object
+    const users = userData.map(user => user.get({ plain: true }));
+    const trips = tripData.map(trip => trip.get({ plain: true }));
+    console.log(`trippiesssssss:  `, { trips });
+    console.log(`trippiesssssss:  `, { users });
+    //map tranforms array into array of plain objects by calling .get({plain:true})
+    res.render('home', { users, trips });
+    //{ users } makes users array available as variable in Handlebars template to display
+});
 
-    })
-})
+// router.post('/home', (req, res) => {
+//     User.findAll({
+//         attributes: [
+//             'id',
+//             'username',
+//             'diet',
+//             'has_boat',
+//             'can_row',
+//             'trip_id'
+//         ]
+//     })
+//         .then(userData => {
+//             console.log(userData);
+//             res.render('home', userData)
 
-router.get('/new-user',(req,res)=>{
+//         })
+// })
+
+router.get('/new-user', (req, res) => {
     res.render('new-user')
 })
-router.get('/new-trip',(req,res)=>{
+router.get('/new-trip', (req, res) => {
     res.render('new-trip')
 })
 
