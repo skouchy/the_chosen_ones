@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
-        diet: req.body.diet,
+        diet: JSON.stringify(req.body.diet),
         has_boat: req.body.has_boat,
         can_row: req.body.can_row,
         trip_id: req.body.trip_id

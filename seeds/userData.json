@@ -1,0 +1,9 @@
+[{
+    "username": "chad",
+  "password": "pass123",
+  "email": "chad@email.com",
+  "diet": "vegan",
+  "has_boat": "kayak",
+  "can_row": true,
+  "trip_id": 1
+}]

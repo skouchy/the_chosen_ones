@@ -8,9 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // * Middleware: added to instruct server on typeOf data & how to interpret(read and write)
-// const hbs = exphbs.create({}) //add helpers into  curly braces utils
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+const hbs = exphbs.create({}) //add helpers into  curly braces utils
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 
 app.use(express.json());// parse incoming JSON data

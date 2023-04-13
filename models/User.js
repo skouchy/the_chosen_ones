@@ -4,9 +4,9 @@ const sequelize = require("../config/connection.js");
 const bcrypt = require("bcrypt");
 
 class User extends Model {
-  // checkPassword(loginPw) {
-  //   return bcrypt.compareSync(loginPw, this.password);
-  // }
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
 }
 
 // initialize User model data and configuration
@@ -45,7 +45,8 @@ User.init(
       }
     },
     diet: {
-      type: DataTypes.ENUM('vegetarian', 'vegan', 'pescetarian', 'nut-free', 'gluten-free'),
+      type: DataTypes.STRING,
+      // values: ['vegetarian', 'vegan', 'pescetarian', 'nut-free', 'gluten-free'],
       allowNull: true
     },
     has_boat: {
