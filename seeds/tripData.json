@@ -1,1 +1,9 @@
-   
+[
+    {
+        "trip_name": "Bing Bong Donkey Kong",
+        "launch_date": "Mon June 24",
+        "end_date": "Wed June 26",
+        "section": "Upper C",
+        "river": "Colorado"
+    }
+]

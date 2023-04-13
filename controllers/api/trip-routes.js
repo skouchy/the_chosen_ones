@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('./')
 const { Trip } = require('../../models');
 
 // GET /api/tripTrips
@@ -32,15 +33,26 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log('req');
+    console.log('req');
+    console.log('req');
+    console.log('req');
+    // console.log(res);
+    // console.log(res.body);
     Trip.create({
-        tripName: req.body.trip_name,
-        launchDate: req.body.launch_date,
-        endDate: req.body.end_date,
-        section: req.body.section,
-        river: req.body.river
-    })
-        .then(dbTripModel => res.json(dbTripModel))
+            trip_name: req.body.trip_name,
+            launch_date: req.body.launch_date,
+            end_date: req.body.end_date,
+            section: req.body.section,
+            river: req.body.river
+        })
+        .then(dbTripModel => {
+            console.log(req.body)
+            res.json(dbTripModel)
+            console.log('rezzzzzzzzzzzzzzzzzzzzzzzzzzz')
+        })
         .catch(err => {
+            console.log(req.body)
             console.log(err);
             res.status(500).json(err);
         });

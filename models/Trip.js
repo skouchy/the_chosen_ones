@@ -1,6 +1,6 @@
 // create our User model: imported 'Model' class & 'DataTypes' obj from Sequelize
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/connection');
 
 class Trip extends Model { }
 

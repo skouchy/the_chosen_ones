@@ -13,12 +13,12 @@ const PORT = process.env.PORT || 3001;
 // app.set('view engine', 'handlebars');
 
 
-app.use(routes);// turn on routes
 app.use(express.json());// parse incoming JSON data
 app.use(express.urlencoded({ extended: true }));// parse incoming string or array data 
 app.use(express.static(path.join(__dirname, 'public')));
 // converts incoming POST data into key/value pairs: accessed in req.body{}
 
+app.use(routes);// turn on routes
 
 
 // * ====================== end of "Middleware" =================================== *// 
@@ -30,5 +30,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Now listening at ${PORT}`));
 });

@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Trip,
-                attributes: ['id']
+                attributes: ['id', 'trip_name', 'launch_date', 'end_date', 'section', 'river']
             }
         ]
     })

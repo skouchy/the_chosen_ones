@@ -1,6 +1,6 @@
 // imports User model
-const User = require('./User');
 const Trip = require('./Trip');
+const User = require('./User');
 
 Trip.hasMany(User, {
     foreignKey: 'trip_id',
@@ -16,4 +16,4 @@ User.belongsTo(Trip, {
 // Team.hasMany(Player);
 // Player.belongsTo(Team);
 
-module.exports = { User, Trip };
+module.exports = { Trip, User };
