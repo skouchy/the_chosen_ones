@@ -5,18 +5,19 @@ const printResults = resultArr => {
   console.log(resultArr);
 
   // generates card for each user data printed
-  const userHTML = resultArr.map(({ id, name, nickname, role, dietaryNeeds }) => {
+  const userHTML = resultArr.map(({ id, username, password, email, dietaryNeeds, has_boat, can_row, trip_id }) => {
     return `
   <div class="col-12 col-md-5 mb-3">
     <div class="card p-3" data-id=${id}>
-      <h4 class="text-primary">${name}</h4>
-      <p>Nickname: ${nickname.substring(0, 1).toUpperCase() + nickname.substring(1)}<br/>
-      Job Role: ${role.substring(0, 1).toUpperCase() + role.substring(1)}<br/>
-      Dietary Needs: ${dietaryNeeds
+      <h4 class="text-primary">${username}</h4>
+      <p>Dietary Needs: ${dietaryNeeds
         .map(diet => `${diet.substring(0, 1).toUpperCase() + diet.substring(1)}`)
         .join(', ')}</p>
-    </div>
-  </div>
+        <p>Bringing a boat?: ${has_boat.substring(0, 1).toUpperCase() + has_boat.substring(1)}<br/>
+        Can you even row bro?: ${can_row.substring(0, 1).toUpperCase() + can_row.substring(1)}</p>
+       
+        </div>
+        </div>
     `;
   });
 
@@ -27,7 +28,7 @@ const printResults = resultArr => {
 // * Here we fetch() to GET data from /api/users
 const getUsers = (formData = {}) => {
   // function will depend on how queryURL ends up looking
-  let queryUrl = '/api/users?';
+  let queryUrl = '/api/user?';
   // if empty form data: simple req to GET /api/users
 
   //
@@ -75,7 +76,7 @@ const handleGetUsersSubmit = event => {
 
   const dietaryNeeds = dietaryNeedsArray.join(',');
 
-  const userObject = { role, dietaryNeeds };
+  const userObject = { dietaryNeeds, has_boat, can_row };
 
   getUsers(userObject);
 };

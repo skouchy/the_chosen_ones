@@ -6,25 +6,32 @@ const handleUserFormSubmit = event => {
   event.preventDefault();
 
   // get user data and organize it
-  const name = $userForm.querySelector('[name="name"]').value;
-  const nickname = $userForm.querySelector('[name="nickname"]').value;
-  const roleRadioHTML = $userForm.querySelectorAll('[name="role"]');
-  let role;
+  const username = $userForm.querySelector('[name="username"]').value;
+  const canRow = $userForm.querySelector('[name="canRow"]').value;
+  const hasBoat = $userForm.querySelectorAll('[name="hasBoat"]').value;
+  let row;
+  let boat;
 
-  for (let i = 0; i < roleRadioHTML.length; i += 1) {
-    if (roleRadioHTML[i].checked) {
-      role = roleRadioHTML[i].value;
+  for (let i = 0; i < canRow.length; i += 1) {
+    if (canRow[i].checked) {
+      row = canRow[i].value;
     }
   }
+  
+    if (row === undefined) {
+      row = '';
+    }
 
-  if (role === undefined) {
-    role = '';
+  for (let i = 0; i < hasBoat.length; i += 1) {
+    if (hasBoat[i].checked) {
+      boat = hasBoat[i].value;
+    }
+  }
+  if (boat === undefined) {
+    boat = '';
   }
 
   
-  // const selectedDietNeed = User.findOne({
-  //   where: { diet }
-  // });
   const selectedDietNeed = $userForm.querySelector('[name="diet"]').selectedOptions;
   const dietArray = [];
   for (let i = 0; i < selectedDietNeed.length; i += 1) {
@@ -32,7 +39,7 @@ const handleUserFormSubmit = event => {
   }
   const userObject = { username, password, name, email, dietArray, boat, captain, trip_id };
 
-  fetch('/api/users', {
+  fetch('/api/user', {
     // allows request to reach proper endpoint in our server (when we added new users to JSON file)
     method: 'POST', //specifies what type of request it is: in this case, it's set to POST
     headers: { 
