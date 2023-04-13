@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('./')
 const { Trip, User } = require('../../models');
+const { log } = require('handlebars');
 
-// GET /api/tripTrips
+// GET /api/trip
 router.get('/', async (req, res) => {
     try {
         const tripData = await Trip.findAll({
@@ -39,12 +40,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    console.log('req');
-    console.log('req');
-    console.log('req');
-    console.log('req');
-    // console.log(res);
-    // console.log(res.body);
+    console.log(`did we make it to the post??`);
     Trip.create({
         trip_name: req.body.trip_name,
         launch_date: req.body.launch_date,
@@ -55,7 +51,6 @@ router.post('/', (req, res) => {
         .then(tripData => {
             console.log(req.body)
             res.json(tripData)
-            console.log('rezzzzzzzzzzzzzzzzzzzzzzzzzzz')
         })
         .catch(err => {
             console.log(req.body)

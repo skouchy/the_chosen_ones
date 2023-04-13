@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Trip, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 // router.get('/', (req, res) => {
 
@@ -20,7 +21,14 @@ router.get('/login', (req, res) => {
     res.render('login')
 });
 
-router.get('/home', async (req, res) => {
+router.get('/new-trip', (req, res) => {
+    res.render('new-trip')
+});
+router.get('/new-user', (req, res) => {
+    res.render('new-user')
+});
+
+router.get('/home',  withAuth, async (req, res) => {
     const userData = await User.findAll({
         attributes: [
             'id',
@@ -70,11 +78,5 @@ router.get('/home', async (req, res) => {
 //         })
 // })
 
-router.get('/new-user', (req, res) => {
-    res.render('new-user')
-})
-router.get('/new-trip', (req, res) => {
-    res.render('new-trip')
-})
 
 module.exports = router;

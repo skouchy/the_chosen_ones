@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Trip } = require('../../models');
-// const withAuth = require('../../util/auth');
+
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -108,6 +108,7 @@ router.post('/login', (req, res) => {
             }
 
             res.json({ user: userData, message: 'YoU aRe NoW lOgGeD iN!' });
+            req.session.logged_in = true;
 
         })
 })

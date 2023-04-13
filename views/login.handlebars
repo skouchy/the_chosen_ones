@@ -1,20 +1,24 @@
 <div class="container">
-        <h2 class="text-center">Login</h2>
+    <h2 class="text-center">Login</h2>
+    <br>
+    <form class="loginForm">
+        <div class="input-group">
+            <label for="username" class="label">Username</label>
+            <input type="text" id="username" class="input">
+            <span class="error-message"></span>
+        </div>
         <br>
-        <form action="/dashboard.html" class="loginForm">
-            <div class="input-group">
-                <label for="username" class="label">Username</label>
-                <input type="text" id="username" class="input">
-                <span class="error-message"></span>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" class="input">
-                <span class="error-message"></span>
-            </div>
-            <br>
-            <button class="button" type="submit">Login</button>
-        </form>
-    </div>
-    <script src="/assets/js/login.js"></script>
+        <div class="input-group">
+            <label for="password" class="label">Password</label>
+            <input type="password" id="password" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <button class="button" type="submit">Login</button>
+    </form>
+</div>
+<button class="button" id="new-trip" type="submit">Registering Trip?</button>
+<form class="register">
+    <button class="button" id="new-user" type="submit">Joining a Trip</button>
+</form>
+<script src="/assets/js/login.js"></script>
