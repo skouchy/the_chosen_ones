@@ -12,8 +12,5 @@ User.belongsTo(Trip, {
     foreignKey: 'trip_id'
 });
 
-// EXAMPLE
-// Team.hasMany(Player);
-// Player.belongsTo(Team);
 
 module.exports = { Trip, User };

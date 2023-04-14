@@ -6,13 +6,10 @@ const { User, Trip } = require('../../models');
 router.get('/', (req, res) => {
     // GETs & queries ALL Users from user table
     User.findAll({
-        // attributes: [['id', 'username', 'password', 'email', 'diet', 'has_boat', 'can_row', 'trip_id']],
-        include: [
-            {
-                model: Trip,
-                attributes: ['id', 'trip_name', 'launch_date', 'end_date', 'section', 'river']
-            }
-        ]
+        include: [{
+            model: Trip,
+            attributes: ['id', 'trip_name', 'launch_date', 'end_date', 'section', 'river']
+        }]
     })
         .then(userData => res.json(userData))
         .catch(error => {
@@ -27,12 +24,10 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: ['id', 'username', 'password', 'email', 'diet', 'has_boat', 'can_row', 'trip_id'],
-        include: [
-            {
-                model: Trip,
-                attributes: ['id']
-            }
-        ]
+        include: [{
+            model: Trip,
+            attributes: ['id']
+        }]
     })
         .then(userData => {
             if (!userData) {
@@ -66,6 +61,8 @@ router.get('/:diet', (req, res) => {
         });
 });
 
+
+// * ================== POST USER ======================== //
 router.post('/', (req, res) => {
     User.create({ // pass in key/value pairs where keys are defined in User model
         username: req.body.username,
@@ -85,6 +82,8 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// * ================== AUTHENTICATION =======================//
 
 router.post('/login', (req, res) => {
     User.findOne({
@@ -111,9 +110,5 @@ router.post('/login', (req, res) => {
 
         })
 })
-
-router.put('/:id', (req, res) => { });
-
-router.delete('/:id', (req, res) => { });
 
 module.exports = router;

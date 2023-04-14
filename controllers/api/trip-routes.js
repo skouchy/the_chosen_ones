@@ -19,9 +19,6 @@ router.get('/', async (req, res) => {
 
 
 // GETs & queries ALL Trips from Trip table
-
-
-
 router.get('/:id', async (req, res) => {
     try {
         const tripData = await Trip.findByPk(req.params.id, {
@@ -39,6 +36,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+
+// * ==================== POST TRIP ====================== //
 router.post('/', (req, res) => {
     console.log(`did we make it to the post??`);
     Trip.create({
@@ -59,18 +58,5 @@ router.post('/', (req, res) => {
         });
 });
 
-// router.post('/:id', (req, res) => {
-//     // GETs & queries One Trip from Trip table
-//     // Trip.findOne()
-//     //     .then(tripData => res.json(tripData))
-//     //     .catch(error => {
-//     //         console.log(`routes/trip:js38`, error);
-//     //         res.status(500).json(error);
-//     //     })
-// });
-
-router.put('/:id', (req, res) => { });
-
-router.delete('/:id', (req, res) => { });
 
 module.exports = router;

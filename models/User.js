@@ -12,41 +12,33 @@ class User extends Model {
 // initialize User model data and configuration
 User.init(
   {
-    // defines 'id' column and allowed data constraints
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    // defines 'username' column and allowed data constraints
     username: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // defines 'password' column and allowed data constraints
     password: {
       type: DataTypes.STRING,
-      // set(value) {
-      //   this.setDataValue('password', hash(value));
-      // },
       allowNull: false,
       validate: {
         len: [6], // password must be atleast 6 characters
       }
     },
-    // defines 'email' column and allowed data constraints
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: true, // only unique contraint
       validate: {
         isEmail: true,
       }
     },
     diet: {
       type: DataTypes.STRING,
-      // values: ['vegetarian', 'vegan', 'pescetarian', 'nut-free', 'gluten-free'],
       allowNull: true
     },
     has_boat: {

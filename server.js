@@ -8,7 +8,9 @@ const anime = require('animejs');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// * Middleware: added to instruct server on typeOf data & how to interpret(read and write)
+
+// * ==================== Middleware: ======================== //
+
 const hbs = exphbs.create({}) //add helpers into  curly braces utils
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -23,10 +25,6 @@ app.use(routes);// turn on routes
 
 
 // * ====================== end of "Middleware" =================================== *// 
-
-
-
-
 
 
 // turn on connection to db and server

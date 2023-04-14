@@ -4,17 +4,15 @@ const sequelize = require('../config/connection');
 
 class Trip extends Model { }
 
-// initialize User model data and configuration
+// initialize Trip model data and configuration
 Trip.init(
     {
-        // defines 'id' column and allowed data constraints
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        // defines 'username' column and allowed data constraints
         trip_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -52,5 +50,3 @@ Trip.init(
 
 // exports user model to be used in other parts of app
 module.exports = Trip;
-
-  //(https://sequelize.org/v5/manual/models-definition.html#configuration))
