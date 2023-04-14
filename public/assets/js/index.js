@@ -1,14 +1,14 @@
-const { User } = require("../../../models");
+const { User, Trip } = require("../../../models");
 
-const $userForm = document.querySelector('#user-form');
+const $userForm = document.querySelector('.newUserForm');
 
 const handleUserFormSubmit = event => {
   event.preventDefault();
 
   // get user data and organize it
   const username = $userForm.querySelector('[name="username"]').value;
-  const canRow = $userForm.querySelector('[name="canRow"]').value;
-  const hasBoat = $userForm.querySelectorAll('[name="hasBoat"]').value;
+  const canRow = $userForm.querySelector('[name="can-row"]').value;
+  const hasBoat = $userForm.querySelectorAll('[name="boat"]').value;
   let row;
   let boat;
 
@@ -37,7 +37,7 @@ const handleUserFormSubmit = event => {
   for (let i = 0; i < selectedDietNeed.length; i += 1) {
     dietArray.push(selectedDietNeed[i].value);
   }
-  const userObject = { username, password, name, email, dietArray, boat, captain, trip_id };
+  const userObject = { username, dietArray, hasBoat, canRow };
 
   fetch('/api/user', {
     // allows request to reach proper endpoint in our server (when we added new users to JSON file)

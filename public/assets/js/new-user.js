@@ -27,5 +27,5 @@ const newUserHandler = async (event) => {
   };
 
   document
-  .querySelector('.newUserForm')
+  .getElementById('join-trip')
   .addEventListener('submit', newUserHandler);

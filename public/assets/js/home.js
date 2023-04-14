@@ -1,5 +1,6 @@
 const $userForm = document.querySelector('#users-form');
 const $displayArea = document.querySelector('#display-area');
+const { User, Trip } = require("../../../models");
 
 const printResults = resultArr => {
   console.log(resultArr);
@@ -32,7 +33,7 @@ const getUsers = (formData = {}) => {
   // if empty form data: simple req to GET /api/users
 
   //
-  Object.entries(formData).forEach(([key, value]) => {
+  User.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
 

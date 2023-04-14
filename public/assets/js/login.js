@@ -34,9 +34,9 @@ const loginFormHandler = async (event) => {
       document.location.replace('/new-trip')
     });
 
-  // document
-  //   .querySelector('#new-user')
-  //   .addEventListener('click', () => {
-  //     document.location.replace('/new-user')
-  //   });
+  document
+    .querySelector('.register')
+    .addEventListener('submit', () => {
+      document.location.replace('/new-user')
+    });
   
