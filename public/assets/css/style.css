@@ -26,7 +26,7 @@
     color: var(--secondary);
     line-height: 1.5;
     font-size: 16px;
-    background: url(./background.jpg);
+    background: url('../images/background.jpg');
     justify-content: center;
     /* background-size: cover; */
   }
