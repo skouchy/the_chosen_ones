@@ -1,12 +1,18 @@
 <div class="container">
-    <h2 class="text-center">Login</h2>
-    <br>
-    <form class="loginForm">
-        <div class="input-group">
-            <label for="email-login" class="label">Email</label>
-            <input type="text" id="email-login" class="input">
-            <span class="error-message"></span>
-        </div>
+        <h2 class="text-center" id="my-heading">Login</h2>
+    <script>
+        // Target the h1 element
+        var heading = document.getElementById('my-heading');
+        // Define the animation properties
+        var animation = anime({
+            targets: heading,
+            opacity: [1, 0],
+            easing: 'linear',
+            duration: 500,
+            direction: 'alternate',
+            loop: true
+        });
+    </script>
         <br>
         <div class="input-group">
             <label for="password-login" class="label">Password</label>
