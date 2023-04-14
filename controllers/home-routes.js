@@ -60,23 +60,5 @@ router.get('/home', async (req, res) => {
     //{ users } makes users array available as variable in Handlebars template to display
 });
 
-// router.post('/home', (req, res) => {
-//     User.findAll({
-//         attributes: [
-//             'id',
-//             'username',
-//             'diet',
-//             'has_boat',
-//             'can_row',
-//             'trip_id'
-//         ]
-//     })
-//         .then(userData => {
-//             console.log(userData);
-//             res.render('home', userData)
-
-//         })
-// })
-
 
 module.exports = router;
