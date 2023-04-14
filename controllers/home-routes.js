@@ -3,29 +3,19 @@ const sequelize = require('../config/connection');
 const { Trip, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// router.get('/', (req, res) => {
-
-//     // DB call, API call
-//     const dbData = [{ name: 'george' }, { name: 'solo' }];
-//     // const dbData2 = { Model: User };
-
-//     res.render('home',
-//         {
-//             dbData,
-//             // dbData2,
-//             layout: 'main'
-//         });
-// });
+router.get('/', (req, res) => {
+    res.render('home');
+});
 
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login');
 });
 
 router.get('/new-trip', (req, res) => {
-    res.render('new-trip')
+    res.render('new-trip');
 });
 router.get('/new-user', (req, res) => {
-    res.render('new-user')
+    res.render('new-user');
 });
 
 router.get('/home', async (req, res) => {
