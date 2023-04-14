@@ -1,5 +1,5 @@
 <div class="container">
-        <h2 class="text-center" id="my-heading">Login</h2>
+    <h2 class="text-center" id="my-heading">Login</h2>
     <script>
         // Target the h1 element
         var heading = document.getElementById('my-heading');
@@ -13,14 +13,19 @@
             loop: true
         });
     </script>
-        <br>
-        <div class="input-group">
-            <label for="password-login" class="label">Password</label>
-            <input type="password" id="password-login" class="input">
-            <span class="error-message"></span>
-        </div>
-        <br>
-        <button class="button" type="submit">Login</button>
+    <div class="input-group">
+        <label for="email" class="label">Email</label>
+        <input type="text" id="email" class="input">
+        <span class="error-message"></span>
+    </div>
+    <br>
+    <div class="input-group">
+        <label for="password-login" class="label">Password</label>
+        <input type="password" id="password-login" class="input">
+        <span class="error-message"></span>
+    </div>
+    <br>
+    <button class="button" type="submit">Login</button>
     </form>
 </div>
 <button class="button" id="new-trip" type="submit">Registering Trip?</button>
