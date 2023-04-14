@@ -13,23 +13,25 @@
             loop: true
         });
     </script>
-    <div class="input-group">
-        <label for="email" class="label">Email</label>
-        <input type="text" id="email" class="input">
-        <span class="error-message"></span>
-    </div>
-    <br>
-    <div class="input-group">
-        <label for="password-login" class="label">Password</label>
-        <input type="password" id="password-login" class="input">
-        <span class="error-message"></span>
-    </div>
-    <br>
-    <button class="button" type="submit">Login</button>
+    <form class="loginForm">
+        <div class="input-group">
+            <label for="email" class="label">Email</label>
+            <input type="text" id="email" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="password-login" class="label">Password</label>
+            <input type="password" id="password-login" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <button class="button" type="submit">Login</button>
     </form>
 </div>
-<button class="button" id="new-trip" type="submit">Registering Trip?</button>
+<br>
+<button class="button" id="new-trip">Registering Trip?</button>
 <form class="register">
-    <button class="button" id="new-user" type="submit">Joining a Trip</button>
+    <button class="button" id="new-user">Joining a Trip</button>
 </form>
 <script src="/assets/js/login.js"></script>

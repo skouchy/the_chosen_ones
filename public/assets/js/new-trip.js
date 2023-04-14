@@ -1,4 +1,4 @@
-const $displayId = document.querySelector('#display-id');
+// const $displayId = document.querySelector('#display-id');
 
 const newTripHandler = async (event) => {
     event.preventDefault();
@@ -18,16 +18,17 @@ const newTripHandler = async (event) => {
       });
   
       if (response.ok) {
-        return `<span>${this.id}</span>`
+        document.location.replace('/new-user');
+        // return `<span>${this.id}</span>`
       } else {
         alert(response.statusText);
       }
     }
-    $displayId.innerHTML = userHTML.join('');
+    // $displayId.innerHTML = userHTML.join('');
   };
   
   document.querySelector('.newTripForm')
   .addEventListener('submit', newTripHandler);
 
-  document.querySelector('#new-trip').addEventListener('click', () => {
-    document.location.replace('/new-user')});
+  // document.querySelector('#new-trip').addEventListener('click', () => {
+    
