@@ -28,7 +28,7 @@ router.get('/new-user', (req, res) => {
     res.render('new-user')
 });
 
-router.get('/home',  withAuth, async (req, res) => {
+router.get('/home', async (req, res) => {
     const userData = await User.findAll({
         attributes: [
             'id',

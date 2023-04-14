@@ -1,56 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body class="login">
-    <div class="container">
-        <form class="form" id="login">
-            <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"></div>
+<div class="container">
+    <form class="newUserForm">
+        <div class="input-group">
+            <label for="username" class="label">Identifying Username</label>
+            <input type="text" id="username" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="password" class="label">Password</label>
+            <input type="password" id="password" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="email" class="label">Email</label>
+            <input type="text" id="email" class="input">
+            <span class="error-message"></span>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="diet" class="form-label">Dietary Needs (pick all that apply)</label>
+            <small>On macOS, use <kbd>command + click</kbd></small> <br />
+            <small>On Windows, use <kdb>ctrl + click</kdb></small>
+            <select multiple id="diet" class="form-input" name="diet">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="pescetarian">Pescetarian</option>
+                <option value="nut-free">Nut Free</option>
+                <option value="gluten-free">Gluten Free</option>
+            </select>
+        </div>
+        <div class="col-12 col-lg-9 bg-dark p-3">
+            <div class="input-group">
+                <label for="has_boat" id="has_boat" class="form-label">Bringing a boat?</label>
+                <div class="flex-row justify-center">
+                    <div class="col-auto mb-2">
+                        <input type="radio" id="no-boat-input" name="boat" value="no-boat">
+                        <label for="no-boat-input">None</label>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <input type="radio" id="raft-input" name="boat" value="raft">
+                        <label for="raft-input">Raft</label>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <input type="radio" id="kayak-input" name="boat" value="kayak">
+                        <label for="kayak-input">Kayak</label>
+                    </div>
+                </div>
             </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
+            <div class="col-12 col-lg-9 bg-dark p-3">
+                <label for="row-input" class="form-label">Can you Captain a Boat?</label>
+                <div class="flex-row justify-center">
+                    <div class="col-auto mb-2">
+                        <input type="radio" id="row-input" name="can-row" value="row">
+                        <label for="row-input">Select for 'yes'</label>
+                    </div>
+                </div>
             </div>
-            <button class="form__button" type="submit">Log in</button>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-            </p>
-        </form>
-        <form class="form form--hidden" id="createAccount">
-            <h1 class="form__title">Create Account</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Email Address">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Confirm password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
-            </p>
-        </form>
-    </div>
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
+        </div>
+
+        <button class="form__button" id="join-trip" type="submit" style="bg-secondary">Join the Crew!</button>
+    </form>
+</div>
+<script src="/assets/js/main.js"></script>
