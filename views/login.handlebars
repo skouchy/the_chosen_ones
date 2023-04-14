@@ -1,5 +1,18 @@
 <div class="container">
-        <h2 class="text-center">Login</h2>
+        <h2 class="text-center" id="my-heading">Login</h2>
+    <script>
+        // Target the h1 element
+        var heading = document.getElementById('my-heading');
+        // Define the animation properties
+        var animation = anime({
+            targets: heading,
+            opacity: [1, 0],
+            easing: 'linear',
+            duration: 500,
+            direction: 'alternate',
+            loop: true
+        });
+    </script>
         <br>
         <form action="/dashboard.html" class="loginForm">
             <div class="input-group">
