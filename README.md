@@ -28,15 +28,18 @@ SO THAT myself and all other's that I want to invite on the trip can input logis
 
 ## How to Use Repo
 Pre-requisites
-* git installed
-* node installed
-* npm installed
-* MySQL installed
+* `git` installed
+	* Run the following commands:
+		</br> `git config --global user.email "you@example.com"`
+		</br> `git config --global user.name "Your Name"`
+* `node` installed
+* `npm` installed
+* `MySQL` installed
 	* Any necessary connector installed - mysql_jdbc_connector
 
 ### Setup Steps
 1. Navigate to the top-level directory and run `npm i` to install `node_modules`
-2. Run the app with `DB_NAME=river_trip_db DB_USER={db_user_name} DB_PW={db_user_name_pw} node server.js`
+2. Run the app with `DB_NAME=river_trip_db DB_USER={db_user_name} DB_PW={db_user_name_pw} npm start`
 
 ## Link to Repo
 https://github.com/skouchy/the_chosen_ones
